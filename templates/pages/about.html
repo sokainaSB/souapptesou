@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <form method="post">
+    {% csrf_token %}
+
+    <label for="initial_href">Initial Href:</label>
+    <input
+      type="text"
+      name="initial_href"
+      id="initial_href"
+      placeholder="Enter initial_href"
+    />
+
+    <label for="ads_href">ads link:</label>
+    <input
+      type="text"
+      name="ads_href"
+      id="ads_href"
+      placeholder="Enter ads_href"
+    />
+
+    <label for="target_text">Target Text:</label>
+    <input
+      type="text"
+      name="target_text"
+      id="target_text"
+      placeholder="Enter target_text"
+    />
+
+    <label for="number_times">Number of Times:</label>
+    <input
+      type="number"
+      name="number_times"
+      id="number_times"
+      placeholder="Enter number_times"
+    />
+
+    <button type="submit">Start</button>
+    
+  </form>
+
+
+  <div id="results">
+    {% if results %} {% for result in results %}
+    <p>{{ result }}</p>
+    {% endfor %} {% endif %}
+  </div>
+</div>
+
+
+
+
+
+<style>
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #results {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+</style>
+
+{% endblock content %}
