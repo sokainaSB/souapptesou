@@ -1,0 +1,1 @@
+web gunicon souapptesou.wsgi:application --log-file -
