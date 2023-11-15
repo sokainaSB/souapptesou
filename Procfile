@@ -1,1 +1,1 @@
-web gunicon souapptesou.wsgi:application --log-file -
+web: gunicorn souapptesou.wsgi:application --log-file -
